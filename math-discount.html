@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="./webpage.css" />
+<script type="text/javascript">
+	
+	var orderList = [12, 45, 88, 'aaa', 12.3, '3r4.', 56.8, 11, '33s', 'rty', 134.1 ];
+	var validOrders = []; // new Array()
+	var minDiscountOrders = 15;
+	
+	for(i=0; i<orderList.length; i++) {
+		var currentOrder = orderList[i];
+	
+		if (isOrderValid(currentOrder)) {
+			if (currentOrder >= minDiscountOrders){		
+				var currentOrderAfterDiscount = currentOrder - currentOrder * 0.2;
+			
+				validOrders.push(Math.round(currentOrderAfterDiscount));
+					
+			} else {
+				validOrders.push(Math.round(currentOrder));
+            }					   
+		}
+	}	
+	
+console.log (validOrders);
+	
+	function isOrderValid (order) {
+		return (typeof order == "number");
+	}
+	
+
+	
+</script>
+
+</head>
+<body>
+<form name="hanhansForm">
+	<input type= "checkbox" name="thebox"/>
+	<input type= "button" value= "Press me!" onClick= "validator ()" />	
+</form>
+
+
+<script type="text/javascript">
+	
+</script>
+</body>
+</html>
+
+
+	
